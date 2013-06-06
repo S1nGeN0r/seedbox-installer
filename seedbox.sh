@@ -3,11 +3,6 @@
 # Created by Marshall Ford - Released to LowEndTalk.com - Orginal commands from http://bit.ly/184MgKM
 # 6/5/2013 v1
 
-# Notes
-# 1. Debian/Ubuntu OS
-# 2. Assumes no firewall has been installed/configured
-#
-
 clear
 # Do some sanity checking.
 	if [ $(/usr/bin/id -u) != "0" ]
