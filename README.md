@@ -1,6 +1,7 @@
 # Seedbox Installer
-Quick and easy Seedbox setup with FTP support for mobile devices
-Created by Marshall Ford - Released to LowEndTalk.com - Orginal commands from http://bit.ly/184MgKM
+- Quick and easy Seedbox setup with FTP support for mobile devices
+- Released to LowEndTalk.com 
+- Orginal commands from http://bit.ly/184MgKM
 ## Usage
 	wget https://raw.github.com/marshallford/SeedboxInstaller/master/seedbox.sh
 	chmod +x seedbox.sh
