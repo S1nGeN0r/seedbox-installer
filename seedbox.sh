@@ -23,19 +23,20 @@ mkdir torrent-files
 mkdir downloads
 cd /opt/
 wget http://download.utorrent.com/linux/utorrent-server-3.0-ubuntu-10.10-27079.tar.gz
+apt-get install libssl0.9.8:i386 -y # for Ubuntu/Debian - http://bit.ly/16jldtw
 tar -zxvf utorrent-server-3.0-ubuntu-10.10-27079.tar.gz
 mv utorrent-server-v3_0 utorrent
+rm utorrent-server-3.0*
 cd utorrent
 echo "Creating init script..."
 chmod +x utserver
 touch /etc/init.d/utorrent
 cat > /etc/init.d/utorrent <<EOF
-
 #!/bin/bash
 ### BEGIN INIT INFO
 # Provides:          utserver
 # Required-Start:    
-# Required-Stop:     
+# Required-Stop:
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # X-Interactive:     true
@@ -60,7 +61,6 @@ case "$1" in
 
 
 exit 0
-
 EOF
 chmod 755 /etc/init.d/utorrent
 update-rc.d -f utorrent defaults
@@ -73,7 +73,7 @@ PASSWORD: (empty)
 echo "Would you like to install vsftpd (FTP) for mobile access? (y/n)"
 read answer
 if [ "$answer" = "y" ]; then
-    apt-get install vsftpd
+    apt-get install vsftpd -y
     echo "Now modifying the vsftpd config, please adjust the following..."
     echo "
     anonymous_enable=NO
